@@ -15,4 +15,4 @@ RUN git clone #repo
 
 RUN pip install -r requirements.txt
 
-WORKDIR cafabra_eb/src/scrapr/cluster/crawler
+WORKDIR src/cluster/crawler
