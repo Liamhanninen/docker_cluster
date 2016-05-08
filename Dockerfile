@@ -1,6 +1,6 @@
 FROM python:2.7.11
 
-MAINTAINER Cafabra
+MAINTAINER liam
 
 RUN apt-get update
 
@@ -11,15 +11,8 @@ RUN apt-get -y install libjpeg62-turbo-dev libmysqlclient-dev libtiff5-dev zlib1
 #RUN pip install --upgrade pip==8.1.0
 RUN pip install --upgrade pip
 
-RUN git clone https://6b4e2c4bce3d248cf60bec06e317c749104bd33d@github.com/cafabra/cafabra_eb.git
+RUN git clone #repo
 
-RUN pip install -r cafabra_eb/requirements.txt
+RUN pip install -r requirements.txt
 
 WORKDIR cafabra_eb/src/scrapr/cluster/crawler
-
-ENV PYTHONPATH=$PYTHONPATH:/cafabra_eb/src
-ENV DJANGO_SETTINGS_MODULES cafabra.settings
-ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-ENV DOCKER_PASSWORD=$DOCKER_PASSWORD
-
-COPY envs.py /cafabra_eb/src/scrapr/cluster/crawler
